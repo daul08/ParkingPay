@@ -1,0 +1,65 @@
+﻿@model ParkingPay.Models.EnteredCarModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Детальная информация</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeOfEntry)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TimeOfEntry)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingTimeinMinutes)
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.ParkingTimeinMinutes / 60) час. @(Model.ParkingTimeinMinutes % 60) минут
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsPaid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsPaid)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingCost)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Paid" class="control-label">Внесенная сумма</label>
+                <input asp-for="Paid" class="form-control" />
+                <span asp-validation-for="Paid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Оплатить за парковку" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="HomeIndex">Back to List</a>
+</div>

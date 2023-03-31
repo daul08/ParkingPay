@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ParkingPay.Models.EnteredCarModel>
+
+@{
+    ViewData["Title"] = "HomeIndex";
+}
+
+<h1>Parking</h1>
+
+<p>
+    <a asp-action="Create">Въезд на парковку</a>
+</p>
+<p>
+    <a asp-action="SearchCar">Оплата за паркову</a>
+</p>
+<p>
+    <a class="btn btn-primary" asp-action="Report">На конец рабочего дня</a>
+</p>
+
