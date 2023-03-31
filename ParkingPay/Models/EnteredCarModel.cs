@@ -11,7 +11,7 @@ namespace ParkingPay.Models
         public DateTime TimeOfEntry { get; set; }
         [Display(Name = "Дата и время выезда с парковки")]
         public DateTime CheckOutTime { get; set; }
-        [Display(Name = "Время стоянки в минутах")]
+        [Display(Name = "Время стоянки")]
         public int? ParkingTimeinMinutes { get; set; }
         [Display(Name = "Оплата за парковку в тенге, составляет:")]
         public int? ParkingCost { get; set; }
